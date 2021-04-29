@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { CharacterDetails } from "../views/CharacterDetails";
 import { Context } from "../store/appContext";
-export const CharacterCards = ({ character, index }) => {
+export const CharacterCards = ({ characters, index }) => {
 	const { actions, store } = useContext(Context);
 
 	const images = {
@@ -27,26 +27,26 @@ export const CharacterCards = ({ character, index }) => {
 
 	return (
 		<div className="card ml-5 " style={{ width: 350, height: 440 }}>
-			<div className="charactercards background-card text-white ml-5 mb-5 " style={{ width: "19rem" }}>
+			<div className="charactercards background-card text-dark ml-5 mb-5 " style={{ width: "19rem" }}>
 				<img
-					src={images[character.name]}
+					src={images[characters.name]}
 					className="card-img-top"
 					style={{ width: 305, height: 360 }}
 					alt="..."
 				/>
 				<div className="card-body ">
-					<h5 className="card-title ">{character.name}</h5>
-					<p className="card-text">
+					<p className="card-title ">{characters.name}</p>
+					<p className="card-text1">
 						Height:
-						{character.height}
+						{characters.height}
 					</p>
-					<p className="card-text">
+					<p className="card-text1">
 						Eye Color:
-						{character.eye_color}
+						{characters.eye_color}
 					</p>
-					<p className="card-text">
+					<p className="card-text1">
 						Hair Color:
-						{character.hair_color}
+						{characters.hair_color}
 					</p>
 
 					<Link
@@ -54,7 +54,7 @@ export const CharacterCards = ({ character, index }) => {
 						className="btn btn-outline-dark d-flex justify-content-start mt-5"
 						style={{ width: 110 }}
 						onClick={() => {
-							actions.setDetails(character);
+							actions.setDetails(characters);
 						}}>
 						Learn More
 					</Link>
@@ -66,7 +66,7 @@ export const CharacterCards = ({ character, index }) => {
 };
 
 CharacterCards.propTypes = {
-	character: PropTypes.object
+	characters: PropTypes.object
 };
 
 CharacterCards.propTypes = {

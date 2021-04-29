@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return response.json();
 					})
 					.then(function(responseAsJson) {
-						setStore({ character: responseAsJson.results });
+						setStore({ characters: responseAsJson.results });
 						console.log(responseAsJson);
 					})
 					.catch(function(error) {

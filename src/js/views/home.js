@@ -13,7 +13,7 @@ export const Home = () => {
 				<h2>Characters</h2>
 				<div className="character-card d-flex align-content  flex-wrap ">
 					{store.characters.map((value, index) => {
-						return <CharacterCards key={index} character={value} index={index} />;
+						return <CharacterCards key={index} characters={value} index={index} />;
 					})}
 				</div>
 			</div>
